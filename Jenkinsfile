@@ -31,11 +31,10 @@ pipeline {
 			submoduleCfg: [], 
 			userRemoteConfigs: [[
 				credentialsId: 'GitHub_mauro2508', 
-				url:'https://github.com/mauro2508/celuNet'
+				url:'https://github.com/mauro2508/celunet'
 			]]
 		])
 		
-		sh 'gradle --b ./celuNet/build.gradle clean compileJava'
 
       }
     }
@@ -43,7 +42,8 @@ pipeline {
     stage('Compile & Unit Tests') {
       steps{
         echo "------------>Unit Tests<------------"
-		sh 'gradle --b ./celuNet/build.gradle test'
+		sh 'gradle --b ./celunet/build.gradle clean compileJava'
+		sh 'gradle --b ./celunet/build.gradle test'
       }
     }
 
@@ -60,7 +60,7 @@ pipeline {
       steps {
         echo "------------>Build<------------"
 		//Construir sin tarea test que se ejecutó previamente
-		sh 'gradle --b ./build.gradle build -x test'
+		sh 'gradle --b ./celunet/build.gradle build -x test'
       }
     }  
   }
@@ -70,7 +70,7 @@ post {
     }
     success {
       echo 'This will run only if successful'
-	  junit 'build/test-results/test/*.xml'
+	  junit 'celunet/dominio/build/test-results/test/*.xml'
     }
     failure {
       echo 'This will run only if failed'
