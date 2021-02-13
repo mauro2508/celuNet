@@ -1,0 +1,1 @@
+insert into cliente (nombre, apellido, email, fecha_nacimiento,fecha_creacion) values (:nombre, :apellido, :email, :fechaNacimiento, :fechaCreacion)
