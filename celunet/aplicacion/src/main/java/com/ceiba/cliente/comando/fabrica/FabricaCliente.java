@@ -13,7 +13,7 @@ public class FabricaCliente {
         return new Cliente(comandoCliente.getId(),
                 comandoCliente.getNombre(), comandoCliente.getApellido(),
                 comandoCliente.getEmail(),comandoCliente.getFechaNacimiento(),
-                LocalDateTime.now());
+                comandoCliente.getFechaCreacion());
 
     }
 }

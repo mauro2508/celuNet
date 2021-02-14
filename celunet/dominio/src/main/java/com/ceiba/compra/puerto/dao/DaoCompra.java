@@ -18,4 +18,11 @@ public interface DaoCompra {
      * @return las compras del cliente.
      */
     List<DtoCompra> listarComprasPorCliente(Long idCliente);
+
+    /**
+     * Permite obtener la compra asociada a un identificadorCompra
+     * @param identificadorCompra
+     * @return compra
+     */
+    DtoCompra obtenerCompraPorIdentificadorCompra(String identificadorCompra);
 }

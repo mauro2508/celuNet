@@ -4,6 +4,14 @@ import com.ceiba.cliente.puerto.repositorio.RepositorioCliente;
 import com.ceiba.cliente.servicio.ServicioActualizarCliente;
 import com.ceiba.cliente.servicio.ServicioCrearCliente;
 import com.ceiba.cliente.servicio.ServicioEliminarCliente;
+import com.ceiba.compra.puerto.repositorio.RepositorioCompra;
+import com.ceiba.compra.servicio.ServicioActualizarCompra;
+import com.ceiba.compra.servicio.ServicioCrearCompra;
+import com.ceiba.compra.servicio.ServicioEliminarCompra;
+import com.ceiba.detalleCompra.puerto.repositorio.RepositorioDetalleCompra;
+import com.ceiba.detalleCompra.servicio.ServicioActualizarDetalleCompra;
+import com.ceiba.detalleCompra.servicio.ServicioCrearDetalleCompra;
+import com.ceiba.detalleCompra.servicio.ServicioEliminarDetalleCompra;
 import com.ceiba.usuario.puerto.repositorio.RepositorioUsuario;
 import com.ceiba.usuario.servicio.ServicioActualizarUsuario;
 import com.ceiba.usuario.servicio.ServicioCrearUsuario;
@@ -47,5 +55,32 @@ public class BeanServicio {
         return new ServicioActualizarCliente(repositorioCliente);
     }
 
+    /* --- Beans Compra ---*/
+    @Bean
+    public ServicioCrearCompra servicioCrearCompra (RepositorioCompra repositorioCompra, RepositorioCliente repositorioCliente){
+        return new ServicioCrearCompra(repositorioCompra, repositorioCliente);
+    }
+    @Bean
+    public ServicioActualizarCompra servicioActualizarCompra (RepositorioCompra repositorioCompra){
+        return new ServicioActualizarCompra(repositorioCompra);
+    }
+    @Bean
+    public ServicioEliminarCompra servicioEliminarCompra (RepositorioCompra repositorioCompra){
+        return new ServicioEliminarCompra(repositorioCompra);
+    }
+
+    /* --- Beans detalle compra ---*/
+    @Bean
+    public ServicioCrearDetalleCompra servicioCrearDetalleCompra(RepositorioDetalleCompra repositorioDetalleCompra){
+        return new ServicioCrearDetalleCompra(repositorioDetalleCompra);
+    }
+    @Bean
+    public ServicioActualizarDetalleCompra servicioActualizarDetalleCompra (RepositorioDetalleCompra repositorioDetalleCompra){
+        return new ServicioActualizarDetalleCompra(repositorioDetalleCompra);
+    }
+    @Bean
+    public ServicioEliminarDetalleCompra servicioEliminarDetalleCompra (RepositorioDetalleCompra repositorioDetalleCompra){
+        return new ServicioEliminarDetalleCompra(repositorioDetalleCompra);
+    }
 
 }
