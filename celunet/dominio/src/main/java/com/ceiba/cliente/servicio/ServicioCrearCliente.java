@@ -5,7 +5,7 @@ import com.ceiba.cliente.modelo.entidad.Cliente;
 
 public class ServicioCrearCliente {
 
-    private static final String EL_CLIENTE_YA_EXISTE_EN_EL_SISTEMA = "El cliente ya existe en el sistema";
+    public static final String EL_CLIENTE_YA_EXISTE_EN_EL_SISTEMA = "El cliente ya existe en el sistema";
 
     private final RepositorioCliente repositorioCliente;
 

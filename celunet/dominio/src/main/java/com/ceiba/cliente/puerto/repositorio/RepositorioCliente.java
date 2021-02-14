@@ -32,10 +32,16 @@ public interface RepositorioCliente {
     boolean existe(String email);
 
     /**
-     * Permite validar si existe un cliente con un nombre excluyendo un id
-     * @param nombre
+     * Permite validar si existe un cliente con un email excluyendo un id
+     * @param email
      * @return si existe o no
      */
-    boolean existeExcluyendoId(Long id,String nombre);
+    boolean existeExcluyendoId(Long id,String email);
 
+    /**
+     * Permite obtener el cliente por id
+     * @param idCliente
+     * @return Cliente
+     */
+    Cliente obtener (long idCliente);
 }
