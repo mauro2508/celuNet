@@ -5,15 +5,15 @@ import com.ceiba.compra.puerto.dao.DaoCompra;
 import org.springframework.stereotype.Component;
 
 @Component
-public class ManejadorObtenerCompraPorIdentificadorCompra {
+public class ManejadorObtenerPorIdentificadorCompra {
 
     private final DaoCompra daoCompra;
 
-    public ManejadorObtenerCompraPorIdentificadorCompra (DaoCompra daoCompra){
+    public ManejadorObtenerPorIdentificadorCompra(DaoCompra daoCompra){
         this.daoCompra = daoCompra;
     }
 
     public DtoCompra ejecutar(String identificadorCompra){
-        return this.daoCompra.obtenerCompraPorIdentificadorCompra(identificadorCompra);
+        return this.daoCompra.obtenerPorIdentificadorCompra(identificadorCompra);
     }
 }

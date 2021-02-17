@@ -1,11 +1,12 @@
 package com.ceiba.producto.controlador;
 
-import com.ceiba.detallecompra.consulta.ManejadorListarDetallesCompra;
 import com.ceiba.producto.consulta.ManejadorListarProductos;
 import com.ceiba.producto.modelo.dto.DtoProducto;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
+@RestController
 public class ConsultaControladorProducto implements ConsultaControlador{
 
     private ManejadorListarProductos manejadorListarProductos;

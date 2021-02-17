@@ -1,0 +1,1 @@
+insert into detalle_compra (cantidad, id_compra,id_producto) values (:cantidad, :idCompra, :idProducto)

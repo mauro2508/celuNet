@@ -11,4 +11,10 @@ public interface DaoCliente {
      */
     List<DtoCliente> listar();
 
+    /**
+     * Permite obtener un cliente por id
+     * @return el cliente
+     */
+    DtoCliente obtenerPorId(Long id);
+
 }

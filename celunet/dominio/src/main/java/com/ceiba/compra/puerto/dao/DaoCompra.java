@@ -24,5 +24,5 @@ public interface DaoCompra {
      * @param identificadorCompra
      * @return compra
      */
-    DtoCompra obtenerCompraPorIdentificadorCompra(String identificadorCompra);
+    DtoCompra obtenerPorIdentificadorCompra(String identificadorCompra);
 }

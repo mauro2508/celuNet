@@ -15,7 +15,7 @@ public class ManejadorListarComprasPorCliente {
         this.daoCompra = daoCompra;
     }
 
-    public List<DtoCompra> listarComprasPorCliente(Long idCliente){
+    public List<DtoCompra> ejecutar(Long idCliente){
         return this.daoCompra.listarComprasPorCliente(idCliente);
     }
 }

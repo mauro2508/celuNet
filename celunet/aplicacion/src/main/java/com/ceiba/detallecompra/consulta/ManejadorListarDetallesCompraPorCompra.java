@@ -16,6 +16,6 @@ public class ManejadorListarDetallesCompraPorCompra {
     }
 
     public List<DtoDetalleCompra> ejecutar(Long idCompra){
-        this.daoDetalleCompra.listarDetallesPorCompra(idCompra);
+       return this.daoDetalleCompra.listarDetallesPorCompra(idCompra);
     }
 }

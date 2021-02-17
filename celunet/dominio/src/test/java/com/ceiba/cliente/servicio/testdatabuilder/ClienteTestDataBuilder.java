@@ -27,6 +27,11 @@ public class ClienteTestDataBuilder {
         return this;
     }
 
+    public ClienteTestDataBuilder conFechaNacimiento(LocalDate fechaNacimiento){
+        this.fechaNacimiento = fechaNacimiento;
+        return this;
+    }
+
     public Cliente build(){
         return new Cliente(id,nombre,apellido,email,fechaNacimiento,fechaCreacion);
     }

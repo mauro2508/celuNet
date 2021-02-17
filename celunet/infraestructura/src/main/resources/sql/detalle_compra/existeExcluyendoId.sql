@@ -1,0 +1,1 @@
+select count(1) from usuario where id <> :id and where id_compra = :idCompra and id_producto = :idProducto

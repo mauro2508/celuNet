@@ -22,6 +22,6 @@ public class ManejadorCrearDetalleCompra implements ManejadorComandoRespuesta<Co
 
     public ComandoRespuesta<Long> ejecutar(ComandoDetalleCompra comandoDetalleCompra){
         DetalleCompra detalleCompra = this.fabricaDetalleCompra.crear(comandoDetalleCompra);
-        return new ComandoRespuest<>(this.servicioCrearDetalleCompra.ejecutar(detalleCompra));
+        return new ComandoRespuesta<>(this.servicioCrearDetalleCompra.ejecutar(detalleCompra));
     }
 }

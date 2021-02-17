@@ -1,0 +1,1 @@
+select count(1) from detalle_compra where id_compra = :idCompra and id_producto = :idProducto

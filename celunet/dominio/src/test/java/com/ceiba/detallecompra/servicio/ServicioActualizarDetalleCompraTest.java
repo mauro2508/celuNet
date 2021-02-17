@@ -22,4 +22,17 @@ public class ServicioActualizarDetalleCompraTest {
         // act - assert
         BasePrueba.assertThrows(()-> servicioActualizarDetalleCompra.ejecutar(detalleCompra), ExcepcionDuplicidad.class, ServicioCrearDetalleCompra.EL_DETALLE_DE_COMPRA_YA_EXISTE_EN_EL_SISTEMA);
     }
+
+    @Test
+    public void ejecutarTest(){
+        //arrange
+        DetalleCompra detalleCompra = new DetalleCompraTestDataBuilder().conId(1L).build();
+        RepositorioDetalleCompra repositorioDetalleCompra = Mockito.mock(RepositorioDetalleCompra.class);
+        Mockito.when(repositorioDetalleCompra.existeExcluyendoId(Mockito.anyLong(),Mockito.anyLong(),Mockito.anyLong())).thenReturn(Boolean.FALSE);
+        ServicioActualizarDetalleCompra servicioActualizarDetalleCompra = new ServicioActualizarDetalleCompra(repositorioDetalleCompra);
+        // act
+        servicioActualizarDetalleCompra.ejecutar(detalleCompra);
+        // assert
+        Mockito.verify(repositorioDetalleCompra).actualizar(detalleCompra);
+    }
 }

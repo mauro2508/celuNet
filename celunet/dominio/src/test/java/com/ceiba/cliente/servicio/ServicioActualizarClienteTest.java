@@ -12,11 +12,26 @@ public class ServicioActualizarClienteTest {
 
     @Test
     public void validarClienteExistenciaPreviaTest(){
+        // arrange
         Cliente cliente = new ClienteTestDataBuilder().conId(1L).build();
         RepositorioCliente repositorioCliente = Mockito.mock(RepositorioCliente.class);
         Mockito.when(repositorioCliente.existeExcluyendoId(Mockito.anyLong(),Mockito.anyString())).thenReturn(Boolean.TRUE);
         ServicioActualizarCliente servicioActualizarCliente = new ServicioActualizarCliente(repositorioCliente);
         // act - assert
         BasePrueba.assertThrows(() -> servicioActualizarCliente.ejecutar(cliente), ExcepcionDuplicidad.class, servicioActualizarCliente.EL_CLIENTE_YA_EXISTE_EN_EL_SISTEMA );
+    }
+
+    @Test
+    public void ejecutarTest(){
+        // arrange
+        Cliente cliente = new ClienteTestDataBuilder().conId(1L).build();
+        RepositorioCliente repositorioCliente = Mockito.mock(RepositorioCliente.class);
+        Mockito.when(repositorioCliente.existeExcluyendoId(Mockito.anyLong(),Mockito.anyString())).thenReturn(Boolean.FALSE);
+        ServicioActualizarCliente servicioActualizarCliente = new ServicioActualizarCliente(repositorioCliente);
+        //act
+        servicioActualizarCliente.ejecutar(cliente);
+        //assert
+        Mockito.verify(repositorioCliente).actualizar(cliente);
+
     }
 }
