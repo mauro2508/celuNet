@@ -28,7 +28,7 @@ public class RepositorioClienteMysql implements RepositorioCliente {
     @SqlStatement(namespace=CLIENTE, value="existeExcluyendoId")
     private static String sqlExisteExcluyendoId;
 
-    @SqlStatement(namespace=CLIENTE value="obtenerPorId")
+    @SqlStatement(namespace=CLIENTE, value="obtenerPorId")
     private static String sqlObtenerPorId;
 
 
