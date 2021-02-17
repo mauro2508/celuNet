@@ -1,5 +1,6 @@
 package com.ceiba.detallecompra.comando.manejador;
 
+import com.ceiba.detalleCompra.servicio.ServicioEliminarDetalleCompra;
 import com.ceiba.manejador.ManejadorComando;
 import com.ceiba.compra.servicio.ServicioEliminarCompra;
 import org.springframework.stereotype.Component;
@@ -7,13 +8,13 @@ import org.springframework.stereotype.Component;
 @Component
 public class ManejadorEliminarDetalleCompra implements  ManejadorComando<Long>{
 
-    private final ServicioEliminarCompra servicioEliminarCompra;
+    private final ServicioEliminarDetalleCompra servicioEliminarDetalleCompra;
 
-    public ManejadorEliminarDetalleCompra (ServicioEliminarCompra servicioEliminarCompra){
-        this.servicioEliminarCompra = servicioEliminarCompra;
+    public ManejadorEliminarDetalleCompra (ServicioEliminarDetalleCompra servicioEliminarDetalleCompra){
+        this.servicioEliminarDetalleCompra = servicioEliminarDetalleCompra;
     }
 
-    public void ejecutar(Long idDetalleCompra){
-        this.servicioEliminarCompra.ejecutar(idDetalleCompra);
+    public void ejecutar(Long id){
+        this.servicioEliminarDetalleCompra.ejecutar(id);
     }
 }

@@ -1,1 +1,1 @@
-select count(1) from usuario where id <> :id and where id_compra = :idCompra and id_producto = :idProducto
+select count(1) from detalle_compra where id <> :id and id_compra = :idCompra and id_producto = :idProducto

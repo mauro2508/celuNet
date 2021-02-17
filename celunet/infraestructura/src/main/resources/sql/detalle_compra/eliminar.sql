@@ -1,3 +1,1 @@
-delete 
-from detalle_compra
-where id = :id
+delete from detalle_compra where id = :id

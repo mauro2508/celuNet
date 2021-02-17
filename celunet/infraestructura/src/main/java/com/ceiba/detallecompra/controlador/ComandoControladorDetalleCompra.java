@@ -15,7 +15,7 @@ public class ComandoControladorDetalleCompra implements ComandoControlador{
     private final ManejadorActualizarDetalleCompra manejadorActualizarDetalleCompra;
     private final ManejadorEliminarDetalleCompra manejadorEliminarDetalleCompra;
 
-    @Autowired
+    //@Autowired
     public ComandoControladorDetalleCompra(ManejadorCrearDetalleCompra manejadorCrearDetalleCompra,
                                            ManejadorActualizarDetalleCompra manejadorActualizarDetalleCompra,
                                            ManejadorEliminarDetalleCompra manejadorEliminarDetalleCompra){
@@ -31,7 +31,7 @@ public class ComandoControladorDetalleCompra implements ComandoControlador{
 
     @Override
     public void actualizar(ComandoDetalleCompra comandoDetalleCompra, Long id) {
-        comandoDetalleCompra.setIdCompra(id);
+        comandoDetalleCompra.setId(id);
         this.manejadorActualizarDetalleCompra.ejecutar(comandoDetalleCompra);
     }
 

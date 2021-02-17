@@ -64,6 +64,6 @@ public class RepositorioDetalleCompraMysql implements RepositorioDetalleCompra {
         paramSource.addValue("id",id);
         paramSource.addValue("idCompra", idCompra);
         paramSource.addValue("idProducto", idProducto);
-        return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().queryForObject(sqlExiste,paramSource, Boolean.class);
+        return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().queryForObject(sqlExisteExcluyendoId,paramSource, Boolean.class);
     }
 }

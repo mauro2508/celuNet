@@ -45,6 +45,7 @@ public class ComandoControladorDetalleCompraTest {
                 .content(objectMapper.writeValueAsString(detalleCompra)))
                 .andExpect(status().isOk())
                 .andExpect(content().json("{'valor': 2}"));
+
     }
 
     @Test
@@ -72,7 +73,4 @@ public class ComandoControladorDetalleCompraTest {
                 .andExpect(status().isOk());
     }
 
-    public void despues(){
-
-    }
 }

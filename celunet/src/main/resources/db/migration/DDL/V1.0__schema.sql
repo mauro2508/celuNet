@@ -43,6 +43,5 @@ create table detalle_compra(
  id_producto int(11) not null,
  primary key (id)
 );
-
-Alter table detalle_compra ADD FOREIGN KEY (id_compra) REFERENCES compra(id);
+Alter table detalle_compra ADD FOREIGN KEY (id_compra) REFERENCES compra(id) on update cascade on delete cascade;
 Alter table detalle_compra ADD FOREIGN KEY (id_producto) REFERENCES producto(id);
