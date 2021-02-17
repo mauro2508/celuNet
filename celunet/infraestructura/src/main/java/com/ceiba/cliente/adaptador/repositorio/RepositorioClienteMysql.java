@@ -10,24 +10,25 @@ import org.springframework.stereotype.Repository;
 @Repository
 public class RepositorioClienteMysql implements RepositorioCliente {
 
+    private static final String CLIENTE = "cliente";
     private final CustomNamedParameterJdbcTemplate customNamedParameterJdbcTemplate;
 
-    @SqlStatement(namespace="cliente", value="crear")
+    @SqlStatement(namespace=CLIENTE, value="crear")
     private static String sqlCrear;
 
-    @SqlStatement(namespace="cliente", value="actualizar")
+    @SqlStatement(namespace=CLIENTE, value="actualizar")
     private static String sqlActualizar;
 
-    @SqlStatement(namespace="cliente", value="eliminar")
+    @SqlStatement(namespace=CLIENTE, value="eliminar")
     private static String sqlEliminar;
 
-    @SqlStatement(namespace="cliente", value="existe")
+    @SqlStatement(namespace=CLIENTE, value="existe")
     private static String sqlExiste;
 
-    @SqlStatement(namespace="cliente", value="existeExcluyendoId")
+    @SqlStatement(namespace=CLIENTE, value="existeExcluyendoId")
     private static String sqlExisteExcluyendoId;
 
-    @SqlStatement(namespace="cliente", value="obtenerPorId")
+    @SqlStatement(namespace=CLIENTE value="obtenerPorId")
     private static String sqlObtenerPorId;
 
 
