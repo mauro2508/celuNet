@@ -1,6 +1,6 @@
-package com.ceiba.detalleCompra.servicio;
+package com.ceiba.detallecompra.servicio;
 
-import com.ceiba.detalleCompra.puerto.repositorio.RepositorioDetalleCompra;
+import com.ceiba.detallecompra.puerto.repositorio.RepositorioDetalleCompra;
 
 public class ServicioEliminarDetalleCompra {
 

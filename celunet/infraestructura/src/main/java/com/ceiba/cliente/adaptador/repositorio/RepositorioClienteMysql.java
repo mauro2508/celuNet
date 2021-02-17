@@ -13,16 +13,16 @@ public class RepositorioClienteMysql implements RepositorioCliente {
     private final CustomNamedParameterJdbcTemplate customNamedParameterJdbcTemplate;
 
     @SqlStatement(namespace="cliente", value="crear")
-    private String sqlCrear;
+    private static String sqlCrear;
 
     @SqlStatement(namespace="cliente", value="actualizar")
-    private String sqlActualizar;
+    private static String sqlActualizar;
 
     @SqlStatement(namespace="cliente", value="eliminar")
-    private String sqlEliminar;
+    private static String sqlEliminar;
 
     @SqlStatement(namespace="cliente", value="existe")
-    private String sqlExiste;
+    private static String sqlExiste;
 
     @SqlStatement(namespace="cliente", value="existeExcluyendoId")
     private static String sqlExisteExcluyendoId;

@@ -1,6 +1,6 @@
-package com.ceiba.detalleCompra.puerto.dao;
+package com.ceiba.detallecompra.puerto.dao;
 
-import com.ceiba.detalleCompra.modelo.dto.DtoDetalleCompra;
+import com.ceiba.detallecompra.modelo.dto.DtoDetalleCompra;
 
 import java.util.List;
 

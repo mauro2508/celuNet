@@ -1,7 +1,7 @@
 package com.ceiba.detallecompra.comando.manejador;
 
-import com.ceiba.detalleCompra.modelo.entidad.DetalleCompra;
-import com.ceiba.detalleCompra.servicio.ServicioCrearDetalleCompra;
+import com.ceiba.detallecompra.modelo.entidad.DetalleCompra;
+import com.ceiba.detallecompra.servicio.ServicioCrearDetalleCompra;
 import com.ceiba.detallecompra.comando.ComandoDetalleCompra;
 import com.ceiba.detallecompra.comando.fabrica.FabricaDetalleCompra;
 import org.springframework.stereotype.Component;

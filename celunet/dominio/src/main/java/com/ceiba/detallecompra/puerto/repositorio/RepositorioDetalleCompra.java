@@ -1,6 +1,6 @@
-package com.ceiba.detalleCompra.puerto.repositorio;
+package com.ceiba.detallecompra.puerto.repositorio;
 
-import com.ceiba.detalleCompra.modelo.entidad.DetalleCompra;
+import com.ceiba.detallecompra.modelo.entidad.DetalleCompra;
 
 public interface RepositorioDetalleCompra {
 

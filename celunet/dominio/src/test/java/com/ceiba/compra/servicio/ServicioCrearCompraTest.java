@@ -66,8 +66,39 @@ public class ServicioCrearCompraTest {
         //assert
         Assert.assertEquals(new Long(1),id);
 
+    }
 
+    @Test
+    public void validarAplicaDescuentoDiaCompra(){
+        // arrange
+        LocalDate fechaCompra = LocalDate.of(2021,2,20);
+        Compra compra = new CompraTestDataBuilder().conFechaCompra(fechaCompra).build();
+        Cliente cliente = new ClienteTestDataBuilder().conId(1L).build();
+        RepositorioCompra repositorioCompra = Mockito.mock(RepositorioCompra.class);
+        RepositorioCliente repositorioCliente = Mockito.mock(RepositorioCliente.class);
+        Mockito.when(repositorioCliente.obtener(Mockito.anyLong())).thenReturn(cliente);
+        Mockito.when(repositorioCompra.existe(Mockito.anyString())).thenReturn(Boolean.FALSE);
+        ServicioCrearCompra servicioCrearCompra = new ServicioCrearCompra(repositorioCompra,repositorioCliente);
+        // act
+        servicioCrearCompra.ejecutar(compra);
+        //assert
+        Assert.assertEquals(new BigDecimal("0.15"), compra.getDescuento());
+    }
 
-
+    @Test
+    public void validarAplicaDescuentoCompraMayor(){
+        // arrange
+        LocalDate fechaCompra = LocalDate.of(2021,2,17);
+        Compra compra = new CompraTestDataBuilder().conFechaCompra(fechaCompra).conValorTotalCompra(new BigDecimal(2500000)).build();
+        Cliente cliente = new ClienteTestDataBuilder().conId(1L).build();
+        RepositorioCompra repositorioCompra = Mockito.mock(RepositorioCompra.class);
+        RepositorioCliente repositorioCliente = Mockito.mock(RepositorioCliente.class);
+        Mockito.when(repositorioCliente.obtener(Mockito.anyLong())).thenReturn(cliente);
+        Mockito.when(repositorioCompra.existe(Mockito.anyString())).thenReturn(Boolean.FALSE);
+        ServicioCrearCompra servicioCrearCompra = new ServicioCrearCompra(repositorioCompra,repositorioCliente);
+        // act
+        servicioCrearCompra.ejecutar(compra);
+        //assert
+        Assert.assertEquals(new BigDecimal("0.05"), compra.getDescuento());
     }
 }

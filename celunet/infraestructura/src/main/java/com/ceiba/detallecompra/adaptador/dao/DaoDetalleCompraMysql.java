@@ -1,8 +1,8 @@
 package com.ceiba.detallecompra.adaptador.dao;
 
 
-import com.ceiba.detalleCompra.modelo.dto.DtoDetalleCompra;
-import com.ceiba.detalleCompra.puerto.dao.DaoDetalleCompra;
+import com.ceiba.detallecompra.modelo.dto.DtoDetalleCompra;
+import com.ceiba.detallecompra.puerto.dao.DaoDetalleCompra;
 import com.ceiba.infraestructura.jdbc.sqlstatement.SqlStatement;
 import com.ceiba.infraestructura.jdbc.CustomNamedParameterJdbcTemplate;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;

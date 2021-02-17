@@ -1,6 +1,6 @@
 package com.ceiba.detallecompra.servicio.testdatabuilder;
 
-import com.ceiba.detalleCompra.modelo.entidad.DetalleCompra;
+import com.ceiba.detallecompra.modelo.entidad.DetalleCompra;
 
 public class DetalleCompraTestDataBuilder {
 

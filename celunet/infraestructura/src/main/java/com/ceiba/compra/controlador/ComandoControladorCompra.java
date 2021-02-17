@@ -4,16 +4,22 @@ import com.ceiba.compra.comando.ComandoCompra;
 import com.ceiba.compra.comando.manejador.ManejadorActualizarCompra;
 import com.ceiba.compra.comando.manejador.ManejadorCrearCompra;
 import com.ceiba.compra.comando.manejador.ManejadorEliminarCompra;
-import org.springframework.web.bind.annotation.RestController;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
 import com.ceiba.ComandoRespuesta;
 
 @RestController
-public class ComandoControladorCompra implements ComandoControlador{
+@RequestMapping("/compras")
+@Api(tags = { "Controlador comando compra"})
+public class ComandoControladorCompra{
 
     private final ManejadorCrearCompra manejadorCrearCompra;
     private final ManejadorActualizarCompra manejadorActualizarCompra;
     private final ManejadorEliminarCompra manejadorEliminarCompra;
 
+    @Autowired
     public ComandoControladorCompra (ManejadorCrearCompra manejadorCrearCompra,
                                      ManejadorActualizarCompra manejadorActualizarCompra,
                                      ManejadorEliminarCompra manejadorEliminarCompra){
@@ -22,19 +28,24 @@ public class ComandoControladorCompra implements ComandoControlador{
         this.manejadorEliminarCompra = manejadorEliminarCompra;
 
     }
-    @Override
-    public ComandoRespuesta<Long> crear(ComandoCompra comandoCompra) {
+
+    @PostMapping
+    @ApiOperation("Crear compra")
+    public ComandoRespuesta<Long> crear(@RequestBody ComandoCompra comandoCompra) {
         return this.manejadorCrearCompra.ejecutar(comandoCompra);
     }
 
-    @Override
-    public void actualizar(ComandoCompra comandoCompra, Long id) {
+
+    @PutMapping("/{id}")
+    @ApiOperation("Actualizar compra")
+    public void actualizar(@RequestBody ComandoCompra comandoCompra, @PathVariable Long id) {
         comandoCompra.setId(id);
         this.manejadorActualizarCompra.ejecutar(comandoCompra);
     }
 
-    @Override
-    public void eliminar(Long id) {
+    @DeleteMapping("/{id}")
+    @ApiOperation("Eliminar compra")
+    public void eliminar(@PathVariable Long id) {
         this.manejadorEliminarCompra.ejecutar(id);
     }
 }

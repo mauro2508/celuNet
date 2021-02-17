@@ -1,7 +1,7 @@
 package com.ceiba.detallecompra.adaptador.dao;
 
 
-import com.ceiba.detalleCompra.modelo.dto.DtoDetalleCompra;
+import com.ceiba.detallecompra.modelo.dto.DtoDetalleCompra;
 import org.springframework.jdbc.core.RowMapper;
 import com.ceiba.infraestructura.jdbc.MapperResult;
 

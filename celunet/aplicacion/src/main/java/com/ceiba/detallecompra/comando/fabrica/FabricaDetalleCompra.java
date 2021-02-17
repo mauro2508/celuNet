@@ -1,6 +1,6 @@
 package com.ceiba.detallecompra.comando.fabrica;
 
-import com.ceiba.detalleCompra.modelo.entidad.DetalleCompra;
+import com.ceiba.detallecompra.modelo.entidad.DetalleCompra;
 import com.ceiba.detallecompra.comando.ComandoDetalleCompra;
 import org.springframework.stereotype.Component;
 

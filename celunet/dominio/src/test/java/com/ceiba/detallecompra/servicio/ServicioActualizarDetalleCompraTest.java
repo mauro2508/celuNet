@@ -1,10 +1,8 @@
 package com.ceiba.detallecompra.servicio;
 
 import com.ceiba.BasePrueba;
-import com.ceiba.detalleCompra.modelo.entidad.DetalleCompra;
-import com.ceiba.detalleCompra.puerto.repositorio.RepositorioDetalleCompra;
-import com.ceiba.detalleCompra.servicio.ServicioActualizarDetalleCompra;
-import com.ceiba.detalleCompra.servicio.ServicioCrearDetalleCompra;
+import com.ceiba.detallecompra.modelo.entidad.DetalleCompra;
+import com.ceiba.detallecompra.puerto.repositorio.RepositorioDetalleCompra;
 import com.ceiba.detallecompra.servicio.testdatabuilder.DetalleCompraTestDataBuilder;
 import org.junit.Test;
 import org.mockito.Mockito;

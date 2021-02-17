@@ -1,7 +1,7 @@
 package com.ceiba.detallecompra.adaptador.repositorio;
 
-import com.ceiba.detalleCompra.modelo.entidad.DetalleCompra;
-import com.ceiba.detalleCompra.puerto.repositorio.RepositorioDetalleCompra;
+import com.ceiba.detallecompra.modelo.entidad.DetalleCompra;
+import com.ceiba.detallecompra.puerto.repositorio.RepositorioDetalleCompra;
 import com.ceiba.infraestructura.jdbc.CustomNamedParameterJdbcTemplate;
 import com.ceiba.infraestructura.jdbc.sqlstatement.SqlStatement;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;

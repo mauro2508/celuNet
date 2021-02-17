@@ -1,7 +1,6 @@
 package com.ceiba.compra.puerto.repositorio;
 
 import com.ceiba.compra.modelo.entidad.Compra;
-import com.ceiba.usuario.modelo.entidad.Usuario;
 
 public interface RepositorioCompra {
 

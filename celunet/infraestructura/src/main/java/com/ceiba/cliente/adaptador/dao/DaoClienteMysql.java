@@ -2,7 +2,6 @@ package com.ceiba.cliente.adaptador.dao;
 
 import com.ceiba.cliente.modelo.dto.DtoCliente;
 import com.ceiba.cliente.puerto.dao.DaoCliente;
-import com.ceiba.usuario.adaptador.dao.MapeoUsuario;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.stereotype.Component;
 import com.ceiba.infraestructura.jdbc.CustomNamedParameterJdbcTemplate;

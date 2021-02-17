@@ -2,7 +2,7 @@ package com.ceiba.compra.util;
 
 import java.math.BigDecimal;
 
-public class DescuentoUtil {
+public final class DescuentoUtil {
 
     public static final BigDecimal TREINTA_Y_CINCO_PORCIENTO = new BigDecimal("0.35");
     public static final BigDecimal VEINTE_PORCIENTO = new BigDecimal("0.2");

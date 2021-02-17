@@ -1,8 +1,8 @@
-package com.ceiba.detalleCompra.servicio;
+package com.ceiba.detallecompra.servicio;
 
 
-import com.ceiba.detalleCompra.modelo.entidad.DetalleCompra;
-import com.ceiba.detalleCompra.puerto.repositorio.RepositorioDetalleCompra;
+import com.ceiba.detallecompra.modelo.entidad.DetalleCompra;
+import com.ceiba.detallecompra.puerto.repositorio.RepositorioDetalleCompra;
 import com.ceiba.dominio.excepcion.ExcepcionDuplicidad;
 
 public class ServicioActualizarDetalleCompra {
@@ -22,7 +22,6 @@ public class ServicioActualizarDetalleCompra {
 
     private void validarExistenciaPrevia(DetalleCompra detalleCompra){
         boolean existe = this.repositorioDetalleCompra.existeExcluyendoId(detalleCompra.getId(), detalleCompra.getIdCompra(), detalleCompra.getIdProducto());
-        System.out.println("existe: " + existe);
         if(existe){
             throw new ExcepcionDuplicidad(EL_DETALLE_DE_COMPRA_YA_EXISTE_EN_EL_SISTEMA);
         }

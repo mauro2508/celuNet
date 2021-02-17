@@ -1,6 +1,6 @@
 package com.ceiba.detallecompra.comando.manejador;
-import com.ceiba.detalleCompra.modelo.entidad.DetalleCompra;
-import com.ceiba.detalleCompra.servicio.ServicioActualizarDetalleCompra;
+import com.ceiba.detallecompra.modelo.entidad.DetalleCompra;
+import com.ceiba.detallecompra.servicio.ServicioActualizarDetalleCompra;
 import com.ceiba.detallecompra.comando.ComandoDetalleCompra;
 import com.ceiba.detallecompra.comando.fabrica.FabricaDetalleCompra;
 import com.ceiba.manejador.ManejadorComando;
