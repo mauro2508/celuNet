@@ -34,7 +34,7 @@ public class ConsultaControladorProductoTest {
         mockMvc.perform(get("/productos")
                 .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$", hasSize(2)))
+                .andExpect(jsonPath("$", hasSize(4)))
                 .andExpect(jsonPath("$[0].nombre", is("Xiaomi redmi note 8")));
     }
 
