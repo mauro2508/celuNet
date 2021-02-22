@@ -50,8 +50,8 @@ public class Compra {
 
 
     public void setDescuento(BigDecimal descuento) {
-        this.descuento = descuento;
-        aplicarDescuentoTotalCompra();
+        recalcularDescuentoCompra(descuento);
+
     }
 
     public void setIdentificadorCompra(String identificadorCompra) {
@@ -71,26 +71,40 @@ public class Compra {
         return valorTotalCompra.compareTo(MINIMO_VALOR_TOTAL_COMPRA_APLICA_DESCUENTO) > 0;
     }
 
-    private void aplicarPorcentajeDescuento(){
-
+    private BigDecimal obtenerPorcentajeDescuento(){
+        BigDecimal desc;
         if(aplicaDescuentoBlackFriday()){
-            this.descuento = DescuentoUtil.TREINTA_Y_CINCO_PORCIENTO;
+            desc = DescuentoUtil.TREINTA_Y_CINCO_PORCIENTO;
         }
         else if(aplicaDescuentoPorDiaCompra()) {
-            this.descuento = (this.descuento !=null && this.descuento.compareTo(DescuentoUtil.QUINCE_PORCIENTO) > 0)
+            desc = (this.descuento !=null && this.descuento.compareTo(DescuentoUtil.QUINCE_PORCIENTO) > 0)
                     ?this.descuento:DescuentoUtil.QUINCE_PORCIENTO;
         }else{
-            this.descuento = this.descuento != null?this.descuento:new BigDecimal(BigInteger.ZERO);
+            desc = this.descuento != null?this.descuento:new BigDecimal(BigInteger.ZERO);
         }
 
         if(aplicaDescuentoCompraMayor()){
-            this.descuento = this.descuento.add(DescuentoUtil.CINCO_PORCIENTO);
+            desc = desc.add(DescuentoUtil.CINCO_PORCIENTO);
         }
+
+        return  desc;
     }
 
     private void aplicarDescuentoTotalCompra(){
-        aplicarPorcentajeDescuento();
+        this.descuento = obtenerPorcentajeDescuento();
         this.valorTotalCompra = DescuentoUtil.aplicarDescuento(this.valorTotalCompra,
                 descuento);
+    }
+
+    private void recalcularDescuentoCompra(BigDecimal descuentoNuevo){
+        if(this.descuento.compareTo(new BigDecimal(BigInteger.ZERO))>0){
+            BigDecimal descuentoAnterior = this.getDescuento();
+            this.descuento = descuentoNuevo;
+            this.valorTotalCompra = DescuentoUtil.recalcularDescuento(this.valorTotalCompra, descuentoAnterior, obtenerPorcentajeDescuento());
+            this.descuento = obtenerPorcentajeDescuento();
+        }else{
+            this.descuento = descuentoNuevo;
+            aplicarDescuentoTotalCompra();
+        }
     }
 }
